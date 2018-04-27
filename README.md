@@ -1,7 +1,5 @@
 # GMH-ShortURL
 
-This shortens takes long urls and shortens them. It was built from scratch with javascript.
+This application takes long URLs and shortens them. It was built from scratch with Javascript.
 
-Team members included Gabriel, Mary, Hannah
-
-But Gabriel is the best.
+Team members included Gabriel, Mary, Hannah, and Alexandra
