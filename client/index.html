@@ -10,14 +10,15 @@
         <main>
             <h1>Enter a url to shorten:</h1>
 
-            <label for="url-input">LongURL:</label>
-            <input type="text" id="url-input" value="http://" placeholder="http://">
+            <label for="urlinput">LongURL:</label>
+            <input type="text" id="urlinput" class="input-styles" value="http://" placeholder="http://">
 
-            <button id="shorten-button">Shorten!</button>
+            <button id="shortenbutton" class="shorten-button-styles">Shorten!</button>
 
-            <label for="url-output">ShortURL:</label>
-            <output type="text" id="url-output" ></output>
+            <label for="urloutput">ShortURL:</label>
+            <output type="text" id="urloutput" class="output-styles" ></output>
         </main>
-        <script src="js/post.js"></script>
+        <script type="text/javascript" src="js/createPost.js"></script>
+        <script type="text/javascript" src="js/getPosts.js"></script>
     </body>
 </html>
