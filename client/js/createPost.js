@@ -1,12 +1,13 @@
 const createPost = () => {
     const data = {
-        "url-input": document.querySelector('#url-input').value,
+        "urlinput": document.querySelector('#urlinput').value, 
+        
 
 
     }
     console.log('Saving the following object to the server:', data);
 
-    fetch('http://localhost:3000/',{
+    fetch('http://localhost:3000/', {
         method:'POST',
         body: JSON.stringify(data),
         headers: {"Content-Type": "application/json"}
@@ -18,7 +19,7 @@ const createPost = () => {
     })
 }
 
-document.querySelector('#shorten-button').onclick = createPost
+document.querySelector('#shortenbutton').onclick = createPost
 
 
 // const input = document.getElementById('url-input'),
