@@ -1,10 +1,9 @@
 //1. define functions:
 const getPosts = () => {
     const obj = {
-        "urlinput": document.querySelector('#urlinput').value,
-        "codeinput": document.querySelector('#codeinput').value, 
-
-    } 
+        'urlinput': document.querySelector('#urlinput').value,
+        'shortcode': document.querySelector('#shortcode').value
+    }
 
     console.log('pulling object:', obj);
 
@@ -20,5 +19,4 @@ const getPosts = () => {
     })
 }
 
-    document.querySelector('#shortenbutton').onclick = getPosts
-
+document.querySelector('#shortenbutton').onclick = getPosts

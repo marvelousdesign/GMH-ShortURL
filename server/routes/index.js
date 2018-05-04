@@ -1,38 +1,30 @@
-const database =[]
+const base58 = require('./base58.js')
 
+const database = []
 
 module.exports = {
-    sayHey(req,res){
-      res.status(200).send({
-        message: 'hey'
-      })
+    sayHey(req,res) {
+        res.status(200).send({ message: 'hey' })
     },
-
-    
     postForm(req,res) {
-      console.log (req.body)
-
-      database.push(req.body)
-      console.log(database)
-
-    if (req.body.length === 0){
-        req.body = 'walter'
-    } else if (req.body.length < 6) {
-      res.status(500).send({
-        message: 'too shoort, six more characters please  '
-      })
-      return
-    }
-
-            res.status(200).send({
-              message: req.body
-            })
+        let pushUrl = () => {
+            database.push(req.body)
         }
-        
-      }
-
- 
-  const makeid = () =>{
-
-  }
-  database.push();
+        if (req.body.shortcode.length === 0) {
+            pushUrl()
+            newCode = base58.encode()
+            res.status(200).send({ message: newCode })
+            req.body.shortcode = newCode
+            console.log(database)
+        } else if (req.body.shortcode.length < 6) {
+            res.status(200).send({
+                message: 'too short! You need atleast six characters.'
+            })
+            return
+        } else {
+            pushUrl()
+            res.status(200).send({ message: req.body.shortcode })
+            console.log(database)
+        }
+    }
+}
