@@ -2,7 +2,7 @@
 const getPosts = () => {
     const obj = {
         "urlinput": document.querySelector('#urlinput').value,
-    
+        "codeinput": document.querySelector('#codeinput').value, 
 
     } 
 
@@ -20,20 +20,5 @@ const getPosts = () => {
     })
 }
 
-    document.querySelector('#shortenbutton').onclick = getPost
+    document.querySelector('#shortenbutton').onclick = getPosts
 
-
-// const showPosts = (posts) => {
-//     console.log(posts)
-//     const container = document.getElementById('#urlinput')
-//     posts.forEach(post => {
-//         let template = `
-//               <h2>${post.name}</h2>
-//               <input"${post.url}">More</input>
-//               <p>${post.text}</p>
-//               <div class="comments">
-//                     <h3>Comments</h3>
-//                     <p>TODO next week...</p>
-//               </div>`
-//         container.innerHTML += template;
-//     })
