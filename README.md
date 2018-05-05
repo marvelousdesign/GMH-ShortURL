@@ -1,4 +1,4 @@
-# GMH-ShortURL
+# GMH-ShortURL 
 
 This application takes long URLs and shortens them. It was built from scratch with Javascript.
 
@@ -6,12 +6,16 @@ Team members included Gabriel, Mary, Hannah, and Alexandra
 
 
 
-1) Ensure node modules is installed with ‘express’ ‘errorhandler’ ‘morgan’ ‘body-parser’ ‘cors’ ‘path’ packages before working on the project locally.
+#GETTING-STARTED
 
-2) In the Client side, post.js has been modified to createPost.js. 
+1) Ensure node modules is installed in your new project folder. Use ‘npm install’ to download node modules.
 
-3) I have also added createPosts to GET the link that is being sent up to the server. 
+2) Use ‘npm install’ again to download node packages ‘express’ ‘errorhandler’ ‘morgan’ ‘body-parser’ ‘cors’ and ‘path’,  before working on the project locally.
 
-4) In the Server side, I have added a routes that contains posts.js, index.js.
+3) ‘cd’ into project folder with your local terminal, then again ‘cd’ into the server folder. 
 
-5) posts.js, index.js contains the module exports.
+4) To start app, type in your terminal (node app.js) and the app will show that it’s listening on (“port 3000”) localhost:3000. 
+
+5) localhost:3000 displays a message “hey”, showing that its working.
+
+
