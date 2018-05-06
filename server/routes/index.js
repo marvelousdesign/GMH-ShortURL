@@ -23,7 +23,8 @@ module.exports = {
             let newCode = base58.encode()
             res.status(200).send({
                 message: `en url is <a href="${baseUrl}${newCode}"
-                            target="_blank">${baseUrl}${newCode}</a>`
+                            target="_blank">${baseUrl}${newCode}</a>`,
+                shortcode: newCode
             })
             req.body.shortcode = newCode
             pushUrl(req.body)
@@ -37,7 +38,8 @@ module.exports = {
             pushUrl(req.body)
             res.status(200).send({
                 message: `en url is <a href="${baseUrl}${req.body.shortcode}"
-                            target="_blank">${baseUrl}${req.body.shortcode}</a>`
+                            target="_blank">${baseUrl}${req.body.shortcode}</a>`,
+                shortcode: req.body.shortcode
             })
             console.log(database)
         }
