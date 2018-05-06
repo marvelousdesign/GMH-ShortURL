@@ -18,6 +18,7 @@ app.use(cors())
 
 app.get('', routes.sayHey)
 app.post('', routes.postForm)
+app.get('/:shortcode', routes.getUrl)
 
 const server = app.listen(3000, () => {
     const port = server.address().port
