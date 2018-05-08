@@ -5,8 +5,19 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const routes = require('./routes')
 const path = require('path')
+const mongodb = require('mongodb')
+const mongoose = require('mongoose')
+let mongoDB = 'url_database'
 
-let app = express()
+const app = express()
+
+// create the database connection
+const DATABASE_NAME = 'url_database'
+const MONGODB_URI = 'mongodb://localhost:27017/' + DATABASE_NAME
+mongoose.connect(MONGODB_URI)
+mongoose.Promise = global.Promise
+const db = mongoose.connection
+db.on('error', console.error.bind(console, 'MongoDB connection error'))
 
 // Middleware: Does stuff to the request and response objects
 // before routing:
