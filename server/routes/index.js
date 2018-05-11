@@ -1,7 +1,22 @@
 const base58 = require('./base58.js')
+const mongoose = require('mongoose')
+const models = require('../models')
 
-const database = []
-let count = 0
+
+const Url = mongoose.model('Url', models.Url)
+const pushUrl = (data) => {
+    // data = req.body
+    data.date_created = new Date()
+    const url = new Url(data)
+    url.save( (err, model) =>  {
+        if (err) {
+            return console.error(err)
+        }
+        console.log(model, 'saved!!!')
+    })
+}
+
+
 
 module.exports = {
     sayHey(req,res) {
@@ -10,13 +25,7 @@ module.exports = {
     postForm(req,res) {
         const baseUrl = 'http://localhost:3000/'
         // pushes to the temporary database's array like objects
-        let pushUrl = () => {
-            database.push({
-                id: ++count,
-                urlinput: req.body.urlinput,
-                shortcode: req.body.shortcode
-            })
-        }
+        
         // checks for any custom shortcode, returns random generated shorten url when there is none
         // or returns shortcode is too short message, or returns your custom shorturl
         if (req.body.shortcode.length === 0) {
@@ -28,7 +37,7 @@ module.exports = {
             })
             req.body.shortcode = newCode
             pushUrl(req.body)
-            console.log(database)
+            console.log(req.body)
         } else if (req.body.shortcode.length < 6) {
             res.status(200).send({
                 message: 'code is too short! You need at least six characters.'
@@ -41,7 +50,7 @@ module.exports = {
                             target="_blank">${baseUrl}${req.body.shortcode}</a>`,
                 shortcode: req.body.shortcode
             })
-            console.log(database)
+            console.log(req.body)
         }
     },
     getUrl (req, res) {
@@ -49,13 +58,15 @@ module.exports = {
         // then returns the urlinput and redirects to the long url
         const shortcode = req.path.substring(1)
         console.log(`Fetching the url from ${shortcode}`)
-        let id = Object.keys(database)
-        id.forEach((id) => {
-            if (shortcode === database[id].shortcode) {
-                let url = database[id].urlinput
-                console.log(`Short code ${shortcode} refers to ${url}`)
-                res.redirect(url)
+        Url.findOne({ shortcode: shortcode}, (err, data) => {
+            if (data){
+                console.log('enter founf in db')
+                res.redirect(data.urlinput) 
+
+            } else {
+                res.redirect('/')
             }
         })
     }
-}
+}    
+        
