@@ -7,12 +7,12 @@ const routes = require('./routes')
 const path = require('path')
 const mongodb = require('mongodb')
 const mongoose = require('mongoose')
-let mongoDB = 'url_database'
+let mongoDB = 'marvelousdesign_v2'
 
 const app = express()
 
 // create the database connection
-const DATABASE_NAME = 'url_database'
+const DATABASE_NAME = 'marvelousdesign_v2'
 const MONGODB_URI = 'mongodb://localhost:27017/' + DATABASE_NAME
 mongoose.connect(MONGODB_URI)
 mongoose.Promise = global.Promise
