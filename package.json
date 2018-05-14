@@ -1,20 +1,23 @@
 {
   "name": "urlshortener",
   "version": "1.0.0",
-  "description": "",
+  "description": "URL Shortener by Gabriel & Mary mostly.",
   "main": "index.js",
+  "repository": "https://github.com/marvelousdesign/GMH-ShortURL",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Gabriel & Mary",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "errorhandler": "^1.5.0",
-    "express": "^4.16.3",
-    "mongoose": "^5.0.17",
-    "morgan": "^1.9.0",
-    "path": "^0.12.7"
+    "body-parser": "1.18.2",
+    "cors": "2.8.4",
+    "dotenv": "5.0.1",
+    "errorhandler": "1.5.0",
+    "express": "4.16.3",
+    "mongodb": "3.0.7",
+    "mongoose": "5.0.17",
+    "morgan": "1.9.0",
+    "path": "0.12.7"
   }
 }

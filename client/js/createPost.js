@@ -19,7 +19,7 @@ const createPost = () => {
         return response.json()
     }).then((data) => {
         console.log('Shortcode:', data.shortcode)
-        document.getElementById('output').innerHTML = `Your short${data.message}`
+        document.getElementById('output').innerHTML = data.message
     })
 }
 
