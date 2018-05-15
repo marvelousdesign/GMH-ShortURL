@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config()
 const express = require('express')
 const errorhandler = require('errorhandler')
 const logger = require('morgan')
@@ -7,31 +8,31 @@ const routes = require('./routes')
 const path = require('path')
 const mongodb = require('mongodb')
 const mongoose = require('mongoose')
-let mongoDB = 'marvelousdesign_v2'
 
 const app = express()
 
 // create the database connection
-const DATABASE_NAME = 'marvelousdesign_v2'
-const MONGODB_URI = 'mongodb://localhost:27017/' + DATABASE_NAME
-mongoose.connect(MONGODB_URI)
+mongoose.connect(process.env.MONGOLAB_URI)
 mongoose.Promise = global.Promise
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error'))
 
-// Middleware: Does stuff to the request and response objects
-// before routing:
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+// Middleware: Does stuff to the request and response objects before routing:
+app.use(bodyParser.json()) // handles JSON bodies
+app.use(bodyParser.urlencoded({ extended: true })) // handles URL encoded bodies
 app.use(logger('dev'))
 app.use(errorhandler())
 app.use(cors())
 
-app.get('', routes.sayHey)
-app.post('', routes.postForm)
+app.use(express.static(path.join(__dirname, '../client/')))
+app.get('/', (req, res) => {
+    // route to serve up the homepage (index.html)
+    res.sendFile(path.join(__dirname, '../client/index.html'));
+})
+app.get('/hey', routes.sayHey)
+app.post('/', routes.postForm)
 app.get('/:shortcode', routes.getUrl)
 
-const server = app.listen(3000, () => {
-    const port = server.address().port
-    console.log('Server is listening on port', port)
-})
+const port = process.env.PORT || 3000
+app.listen(port)
+console.log('Server is listening on port', port)
