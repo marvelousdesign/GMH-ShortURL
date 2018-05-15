@@ -3,25 +3,31 @@
     <head>
         <meta charset="utf-8">
         <title>URL Shortener</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <main>
-            <h1>Enter a url to shorten:</h1>
+        <div class="grid">
+            <main>
+                <h1>Enter a url to shorten:</h1>
 
-            <label for="urlinput">Long URL:</label>
-            <input type="text" id="urlinput" class="input-styles" value="http://" placeholder="http://">
+                <label class="labelcenter" for="urlinput">Long URL:</label>
+                <input type="text" id="urlinput" class="input-styles" value="http://" placeholder="http://">
 
-            <label for="shortcode">Short Code:</label>
-            <input type="text" id="shortcode" class="input-styles" ></input>
+                <label class="labelcenter" for="shortcode">Short Code:</label>
+                <input type="text" id="shortcode" class="input-styles" ></input>
 
-            <button id="shortenbutton" class="shorten-button-styles">Shorten!</button>
-            <div id="output"></div>
+                <button id="shortenbutton" class="shorten-button-styles">Shorten!</button>
+                <div id="output"></div>
 
-        </main>
-        <script type="text/javascript" src="js/modal.js"></script>
-        <script type="text/javascript" src="js/getPosts.js"></script>
-        <script type="text/javascript" src="js/createPost.js"></script>
+            </main>
+         </div>
+            <script type="text/javascript" src="js/modal.js"></script>
+            <script type="text/javascript" src="js/getPosts.js"></script>
+            <script type="text/javascript" src="js/createPost.js"></script>
+  
     </body>
+
 </html>
