@@ -10,7 +10,7 @@ const createPost = () => {
         console.log(`Your url: ${data.urlinput} is not saved, please try again!`)
     }
 
-    fetch('https://gmshortener.herokuapp.com/', {
+    fetch('http://localhost:3000/', {
         method:'POST',
         body: JSON.stringify(data),
         headers: {"Content-Type": "application/json"}

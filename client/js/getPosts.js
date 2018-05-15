@@ -7,7 +7,7 @@ const getPosts = () => {
 
     console.log('pulling object:', obj);
 
-    fetch('https://gmshortener.herokuapp.com/', {
+    fetch('http://localhost:3000/', {
     method:'GET',
     body: Object.parse(obj),
     headers: {"Content-Type": "application/json"}
