@@ -8,7 +8,7 @@ Team members included Gabriel, Mary, Hannah, and Alexandra
 
 #GETTING-STARTED
 
-1) Ensure node modules is installed in your new project folder. Use ‘npm install’ to download node modules.
+1) Ensure node modules is installed in the project folder. If not yet done, use ‘npm install’ to download node modules.
 
 2) Use ‘npm install’ again to download node packages ‘express’ ‘errorhandler’ ‘morgan’ ‘body-parser’ ‘cors’ and ‘path’,  before working on the project locally.
 

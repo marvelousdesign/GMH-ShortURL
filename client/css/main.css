@@ -2,7 +2,20 @@ body {
     background-color: #013;
 }
 
+.grid {
+
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+		grid-gap: 10px;
+		
+		margin: 0 auto;
+
+		}
+
 main {
+    grid-column: 3/11;
+    grid-row: 2/5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +23,12 @@ main {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    margin: 5em;
+    
+   
+}
+
+h1{
+    color: white;
 }
 
 .input-styles {
@@ -59,4 +77,15 @@ main {
 
 #output a {
     color: #d34;
+}
+
+@media  screen and (min-width: 320px) 
+                and (max-width: 778) 
+                and (-webkit-min-device-pixel-ratio: 2){
+
+    h1 {
+
+        display:flex;
+    }
+    
 }
