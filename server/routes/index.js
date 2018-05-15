@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const models = require('../models')
 
 const Url = mongoose.model('Url', models.Url)
-const baseUrl = 'https://gmshortener.herokuapp.com/' // 'http://localhost:3000'
+const baseUrl = 'https://gmshortener.herokuapp.com/' // 'http://localhost:3000/'
 const pushUrl = (data) => {
     // saves the data to mongodb
     data.date_created = new Date()
