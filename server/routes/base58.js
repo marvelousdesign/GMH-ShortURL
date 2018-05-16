@@ -11,4 +11,4 @@ const generate = () => {
     return text
 }
 
-module.exports.generate = generate
+module.exports.gen = generate

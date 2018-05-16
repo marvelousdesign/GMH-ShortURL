@@ -5,7 +5,7 @@ const getPosts = () => {
         'shortcode': document.querySelector('#shortcode').value
     }
 
-    console.log('pulling object:', obj);
+    console.log('pulling object:', obj)
 
     fetch('https://gmshortener.herokuapp.com/', {
     method:'GET',
@@ -13,9 +13,9 @@ const getPosts = () => {
     headers: {"Content-Type": "application/json"}
 
     }).then((response) => {
-        return response.json(obj);
+        return response.json(obj)
     }).then((obj) => {
-        console.log(obj);
+        console.log(obj)
     })
 }
 
