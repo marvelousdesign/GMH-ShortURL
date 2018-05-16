@@ -9,4 +9,4 @@ const UrlSchema = new mongoose.Schema({
     date_created: Date
 })
 
-module.exports = mongoose.model('Url', UrlSchema);
+module.exports = mongoose.model('Url', UrlSchema)
