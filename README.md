@@ -16,7 +16,7 @@ Run git clone to clone this repo.
 git clone https://github.com/marvelousdesign/GMH-ShortURL.git
 ```
 
-Ensure that node modules are installed in your new project folder. Use ‘npm ci’ it will remove existing node_modules/ if they exists, then installs the exact versions.
+Ensure that node modules are installed in your new project folder. Use ‘npm ci’ it will remove existing node_modules/ if they exists, then installs the exact versions from the package-lock.json.
 
 ```
 npm ci
@@ -34,7 +34,7 @@ Go to http://localhost:3000 in your browser, and it will display the client/inde
 
 # Testing out the app
 
-To test it out locally, you'll have to switch out const variables in client/createPost.js, client/getPosts.js, and the process environment variables in server/routes/db.js.
+To test it out locally, you'll have to switch out the process environment variables in server/routes/db.js, since that one is use for the output of the shorturl.
 
 Test out the app by saving multiple long urls to see if the validation will accept it, and if it'll accept your custom short code.
 
@@ -78,12 +78,12 @@ You can use 'heroku config:set' to connect mLab to Heroku via terminal.
 heroku config:set MONGOLAB_URI='mongodb://dbuser:dbpassword@ab112345.mlab.com:12345/database'
 ```
 
-After you deploy it to heroku, you can use 'heroku open' on your terminal to open the webpage on your browser.
+After you deploy it to Heroku, you can use 'heroku open' on your terminal to open the webpage on your browser.
 ```
 heroku open
 ```
-Simlarly you can use 'heroku local' it will fire up node with the web.1 dyno process.
+Similarly you can use 'heroku local' it will fire up node with the web.1 dyno process.
 ```
 heroku local
 ```
-Then go to http://localhost:5000 on your browser. You'll see the last state of when you deploy it to heroku.
+Then go to http://localhost:5000 on your browser. You'll see the last state of when you deploy it to Heroku.

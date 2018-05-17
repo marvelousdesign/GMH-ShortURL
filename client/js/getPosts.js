@@ -7,8 +7,8 @@ const getPosts = () => {
 
     console.log('pulling object:', obj)
 
-    // to test locally replace herokuapp with localhost
-    fetch(herokuapp, {
+    // url will change depending on what url you are on
+    fetch(url, {
     method:'GET',
     body: Object.parse(obj),
     headers: {"Content-Type": "application/json"}
