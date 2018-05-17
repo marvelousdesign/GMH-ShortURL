@@ -13,23 +13,31 @@ body {
 
 		}
 
-main {
-    grid-column: 3/11;
-    grid-row: 2/5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    
-   
-}
-
-h1{
-    color: white;
-}
+        main {
+            grid-column: 3/10;
+             grid-row: 2/6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            
+           
+        }
+        
+        h1{
+            grid-column: 3/10;
+            grid-row: 1/2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
 
 .input-styles {
     font: inherit;
@@ -58,34 +66,53 @@ h1{
     cursor: pointer;
 }
 
-.output-styles{
-    font: inherit;
-    font-size: 3rem;
-    font-family: monospace;
-    font-weight: bold;
-    padding: 0.3em;
-    padding-bottom: 1.3em;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 0;
-    outline: 0;
-}
-
-.output-styles:focus {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
 #output a {
+    color: white;
+    text-decoration: none;
+}
+#output a:hover {
     color: #d34;
+    text-decoration: none;
 }
 
-@media  screen and (min-width: 320px) 
-                and (max-width: 778) 
-                and (-webkit-min-device-pixel-ratio: 2){
+#output a:active {
+    color: #f1eea6;
+    text-decoration: none;
+}
+
+#output a:visited {
+    color: #c9d874;
+    text-decoration: none;
+}
+
+
+
+@media  (min-width: 320px) {
 
     h1 {
-
-        display:flex;
+        grid-column: 1/13;
+        grid-row: 1/3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 29px;
+       
+    }
+    main {
+        grid-column: 3/11;
+        grid-row: 2/6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        
+       
     }
     
 }
