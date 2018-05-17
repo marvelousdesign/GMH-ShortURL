@@ -6,7 +6,8 @@ module.exports = {
     sayHey(req,res) {
         res.status(200).send({ message: 'hey' })
     },
-    posts: require('./posts.js'),
+    // postsVal.js chains to posts.js, it checks for valid urls then saves
+    postsVal: require('./postsVal.js'),
 
     // finds the shortcode in the database and redirects to the long url
     getUrl(req, res) {
@@ -15,7 +16,7 @@ module.exports = {
         Url.findOne({shortcode: shortcode}, (err, data) => {
             if (data) {
                 console.log(`Entry is found in the database and redirecting to ${baseUrl}${shortcode}`)
-                res.redirect(302, data.urlinput)
+                res.status(302).redirect(data.urlinput)
             } else {
                 res.status(404).redirect('/404.html')
             }

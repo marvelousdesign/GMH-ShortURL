@@ -3,4 +3,7 @@ const mongoose = require('mongoose')
 const models = require('../models')
 
 module.exports.Url = mongoose.model('Url', models.Url)
-module.exports.baseUrl = 'https://gmshortener.herokuapp.com/' // 'http://localhost:3000/'
+module.exports.baseUrl = process.env.BASE_URI
+// to test locally replace BASE_URI with LOCALHOST
+// or if you don't have a .env hardcode:
+// 'https://gmshortener.herokuapp.com/' or 'http://localhost:3000/'
