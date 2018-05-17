@@ -19,20 +19,13 @@ const createPost = () => {
     }).then((response) => {
         return response.json()
     }).then((data) => {
-        // url2 output what process.env.VARIABLE is between BASE_URI & LOCALHOST in server/routes/db.js
-        const getServerUrl = (data) => {
-            return (data.baseUrl === 'https://gmshortener.herokuapp.com/') ?
-                'https://gmshortener.herokuapp.com/' : 'http://localhost:3000/'
-        }
-        const url = getServerUrl(data)
-
         if (data.shortcode === undefined) {
             console.log('Message:', data.message)
             document.getElementById('output').innerHTML = data.message
         } else {
-            console.log('Message:', data.message, url2 + data.shortcode)
+            console.log('Message:', data.message, data.baseUrl + data.shortcode)
             document.getElementById('output').innerHTML =
-                `${data.message} <a href="${url2}${data.shortcode}" target="_blank">${url2}${data.shortcode}</a>`
+                `${data.message} <a href="${data.baseUrl}${data.shortcode}" target="_blank">${data.baseUrl}${data.shortcode}</a>`
         }
         console.log('Shortcode:', data.shortcode)
     })
