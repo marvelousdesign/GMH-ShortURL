@@ -21,7 +21,7 @@ const createPost = () => {
     }).then((response) => {
         return response.json()
     }).then((data) => {
-        console.log('Message:', data.message2)
+        console.log('Message:', data.message)
         console.log('Shortcode:', data.shortcode)
         document.getElementById('output').innerHTML = data.message
     })
