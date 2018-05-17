@@ -13,8 +13,9 @@ const postsForm = (req, res) => {
         if (data) {
             // since it exists, we return it without creating a new entry
             res.status(200).send({
-                message: `The shorten url already exists at <a href="${baseUrl}${data.shortcode}" target="_blank">${baseUrl}${data.shortcode}</a>`,
-                shortcode: data.shortcode
+                message: 'The shorten url already exists at ',
+                shortcode: data.shortcode,
+                baseUrl: baseUrl
             })
             console.log(`The shorten url already exists at ${baseUrl}${data.shortcode}`)
        } else {
@@ -23,7 +24,7 @@ const postsForm = (req, res) => {
             Url.findOne({shortcode: shortcode}, (err, data) => {
                 if (data) {
                     res.status(200).send({
-                        message: `The shortcode already exists! Try again.`,
+                        message: 'The shortcode already exists! Try again.',
                     })
                     return false
                 } else {
@@ -32,8 +33,9 @@ const postsForm = (req, res) => {
                     if (shortcode.length === 0) {
                         let newCode = base58.gen()
                         res.status(201).send({
-                            message: `Your shorten url is <a href="${baseUrl}${newCode}" target="_blank">${baseUrl}${newCode}</a>`,
-                            shortcode: newCode
+                            message: 'Your shorten url is ',
+                            shortcode: newCode,
+                            baseUrl: baseUrl
                         })
                         req.body.shortcode = newCode
                         save.url(req.body)
@@ -45,15 +47,16 @@ const postsForm = (req, res) => {
                     // test the shortcode for non letters and numbers
                     } else if (!validate.code(shortcode)) {
                         res.status(200).send({
-                            message: `Your shortcode can only contain letters and numbers! Try again.`
+                            message: 'Your shortcode can only contain letters and numbers! Try again.'
                         })
                         console.log(shortcode, 'is invalid!')
                         return false
                     } else {
                         save.url(req.body)
                         res.status(201).send({
-                            message: `Your shorten url is <a href="${baseUrl}${req.body.shortcode}" target="_blank">${baseUrl}${req.body.shortcode}</a>`,
-                            shortcode: req.body.shortcode
+                            message: 'Your shorten url is ',
+                            shortcode: req.body.shortcode,
+                            baseUrl: baseUrl
                         })
                     }
                 }
