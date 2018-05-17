@@ -8,6 +8,7 @@ const routes = require('./routes')
 const path = require('path')
 const mongodb = require('mongodb')
 const mongoose = require('mongoose')
+const request = require('request')
 
 const app = express()
 
@@ -30,7 +31,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'))
 })
 app.get('/hey', routes.sayHey)
-app.post('/', routes.posts.form)
+app.post('/', routes.postsVal.form)
 app.get('/:shortcode', routes.getUrl)
 
 const port = process.env.PORT || 3000
